@@ -1,30 +1,21 @@
-# Ecolog-stica
-import sys
+Escrever a quantos dias, horas, minutos e segundos aquela quantidade de segundos equivale. A saída deve ser uma string no formato: "DDdHHhMMmSSs", onde DD, HH, MM e SS são os valores númericos (com dois dígitos, sendo o primeiro 0 caso o número seja menor que 10) e "d", "h", "m" e "s" caracteres que denotam dias, horas, minutos e segundos. 
 
-line = sys.stdin.readline()
+No caso da entrada conter algum erro, a saída deve ser a string "ERRO" (sem as aspas). 
 
-try:
+Obs: A saída não deve conter espaços antes ou depois do valor da resposta!
 
-segundos = int (line)
+Exemplo de Entrada 1
 
-if segundos < 0 or segundos > 864000: print 'ERRO'
+864000 Exemplo de Saída 1
 
-else:
+10d00h00m00s 
 
-dias = segundos / (60 * 60 * 24)
+Exemplo de Entrada 2
 
-segundos -= dias * (60 * 60 * 24)
+144067 Exemplo de Saída 2
 
-horas = segundos / (60 * 60)
+01d16h01m07s
 
-segundos -= horas * (60 * 60)
+Explanação dos exemplos
 
-minutos = segundos / 60
-
-segundos -= minutos * 60
-
-print (str(dias).zfill(2) + 'd' + str(horas).zfill(2) + 'h' + str(minutos).zfill(2) + 'm' + str(segundos).zfill(2) + 's')
-
-except ValueError:
-
-print 'ERRO'
+Veja que as saídas respeitam o formato definido no enunciado do exercício.
